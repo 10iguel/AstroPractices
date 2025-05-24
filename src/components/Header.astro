@@ -1,0 +1,17 @@
+---
+import {ROUTES} from "../const/routes";
+const currentPath = Astro.url.pathname;
+---
+<header class="flex justify-center items-center py-4 w-full">
+    <nav class="flex flex-row gap-8 justify-center items-center">
+        {ROUTES.map(({path, label}) => (
+                <a
+                        href={path}
+                        class=`text-black text-sm uppercase tracking-wider hover:text-gray-600 transition-colors border-b-2
+                ${ currentPath === path ? 'border-gray-600' : 'border-transparent hover:border-gray-300'}`
+                >
+                    {label}
+                </a>
+        ))}
+    </nav>
+</header>

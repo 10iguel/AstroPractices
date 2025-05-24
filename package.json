@@ -9,6 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.11"
+    "@fontsource/dancing-script": "^5.2.5",
+    "@fontsource/twinkle-star": "^5.2.5",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.5",
+    "astro": "^5.7.11",
+    "tailwindcss": "^4.1.5"
   }
 }

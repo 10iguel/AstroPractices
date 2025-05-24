@@ -1,0 +1,26 @@
+---
+import {SOCIAL} from "../const/social";
+---
+<footer class="relative w-full pb-32 2xl:mt-24 2xl:pb-96 items-center">
+    <div
+     class="absolute inset-0 bg-[url('/images/footer.webp')] bg-cover [mask-image:linear-gradient(transparent,black_50%)]">
+    </div>
+    <div class="relative flex flex-col justify-between items-center w-full">
+        <div class="footer-content">
+            <p>@ 2025 Miguel Espinoza. All rights reserved </p>
+        </div>
+        <div class="flex flex-row items-center justify-center gap-x-3">
+            {SOCIAL.map(({name, url, image, label })=>(
+                            <a href={url}
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label={label ??name}
+                               class="flex items-center gap-2 transition hover:scale-125">
+                                <image.logo/>
+                            </a>
+                )
+
+            )}
+        </div>
+    </div>
+</footer>
