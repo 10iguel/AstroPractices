@@ -10,16 +10,16 @@ const info = {
 }
 ---
 
-<section class="bg-gradient-to-b from-black via-blue-500 to-blue border border-solid border-black p-9 rounded-sm">
-    <p class="font-mono text-xl leading-tight">
-        {info.name}
-    </p>
-    <br/>
-    {info.description}
-    <br/>
-    {info.phoneNumber}
-    <br/>
-    {info.email}
-    <br/>
-    {info.address}
+<section class="relative w-full">
+    <div class="relative">
+        <img src="/images/HomePicture.webp" class="w-full h-auto object-cover" alt="Background" />
+
+        <div class="absolute inset-0 flex items-center p-8 justify-between">
+            <h1 class="text-black text-4xl md:text-6xl font-bold">Happy Anniversary</h1>
+            <h1 class="text-black text-4xl md:text-6xl font-bold">July 27 th</h1>
+        </div>
+        <div class="absolute inset-0 flex flex-col-reverse items-center p-8 justify-end">
+            <h1 class="text-black text-4xl md:text-8xl font-bold">Celeste and Miguel</h1>
+        </div>
+    </div>
 </section>
