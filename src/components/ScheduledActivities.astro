@@ -1,52 +1,7 @@
 ---
 import {IMPORTANT_EVENTS} from "../const/importantEvents.ts";
-const events = [
-    {
-        date: "FRIDAY, JUNE 7, 2019",
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Two people icon">
-      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-      <circle cx="12" cy="7" r="4"></circle>
-    </svg>`,
-        title: "First Date",
-        time: "5:00 pm",
-        datetime: "2019-06-07T21:00",
-        location: "Fairmont San Francisco",
-        address: "950 Mason Street, San Francisco, CA 94108",
-        description: "There will be a few light bites in addition to cocktails. Can't wait to see you!"
-    },
-    {
-        date: "SATURDAY, JUNE 8, 2019",
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Two hearts icon">
-      <path d="M12 2l2 6h4l-5 6 2 6-5-6-5 6 2-6-5-6h4l2-6z"></path>
-    </svg>`,
-        title: "Ceremony",
-        time: "5:30 pm",
-        datetime: "2019-06-08T17:30",
-        location: "Palace of Fine Arts Theatre",
-        address: "3301 Lyon Street, San Francisco, CA 94123",
-        description: "The grass can be a little soft, so you might want to rethink stilettos!"
-    }
-];
 ---
-<!--<section class="p-4 bg-beige-100">-->
-<!--    {events.map(event => (-->
-<!--            <article class="flex flex-col md:flex-row justify-center items-center mb-4 last:mb-0">-->
-<!--                <header class="w-full md:w-1/2 p-4 text-center">-->
-<!--                    <h2 class="text-4xl font-serif text-gray-800 uppercase mb-2">{event.date}</h2>-->
-<!--                    <div class="flex justify-center mb-2" set:html={event.icon} />-->
-<!--                    <h3 class="text-2xl font-serif text-gray-700">{event.title}</h3>-->
-<!--                    <time class="text-lg text-gray-600 mt-2" datetime={event.datetime}>{event.time}</time>-->
-<!--                </header>-->
-<!--                <div class="w-full md:w-1/2 p-4 text-center border-l border-gray-300">-->
-<!--                    <address class="text-gray-600 not-italic">-->
-<!--                        {event.location}<br />-->
-<!--                        {event.address}-->
-<!--                    </address>-->
-<!--                    <p class="text-gray-600 mt-2">{event.description}</p>-->
-<!--                </div>-->
-<!--            </article>-->
-<!--    ))}-->
-<!--</section>-->
+
 <section class="p-4 bg-beige-100">
     {IMPORTANT_EVENTS.map(({date, image,address,description,time,title,location,datetime}) => (
             <article class="flex flex-col md:flex-row justify-center items-center mb-4 last:mb-0">
@@ -63,7 +18,7 @@ const events = [
                         {location}<br />
                         {address}
                     </address>
-                    <p class="text-gray-600 mt-2">{description}</p>
+                    <p class="text-gray-600 mt-2 text-xl">{description}</p>
                 </div>
             </article>
     ))}
