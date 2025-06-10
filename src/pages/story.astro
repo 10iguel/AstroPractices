@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Placeholder data (replace with your details)
+const couplePhoto = {
+    src: "/images/couple-photo.jpg",
+    alt: "The couple on their wedding day",
+};
+
+const marriageQuote = {
+    text: "Marriage is not just a bond, but a journey of two hearts growing together, woven with love, trust, and endless memories.",
+    author: "Unknown",
+};
+
+const story = {
+    photo: {
+        src: "/images/engagement-moment.jpg",
+        alt: "The couple during their engagement",
+    },
+    text: "We met by chance at a local coffee shop, where a spilled latte led to a conversation that never ended. From our first date hiking in the mountains to the moment we said 'I do,' every step has been an adventure. Our love has grown through laughter, challenges, and countless shared dreams, making every anniversary a celebration of our journey together.",
+};
+---
+
+<Layout>
+    <section class="container mx-auto py-12 px-4">
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">
+            How It All Began
+        </h1>
+
+        <!-- Couple Photo -->
+        <div class="flex justify-center mb-12">
+            <img
+                    src={couplePhoto.src}
+                    alt={couplePhoto.alt}
+                    class="w-full max-w-md h-auto rounded-lg shadow-md object-cover"
+            />
+        </div>
+
+        <!-- Marriage Quote -->
+        <div class="text-center bg-white rounded-lg shadow-md p-8 mb-12 max-w-3xl mx-auto">
+            <blockquote class="text-xl text-gray-600 italic">
+                "{marriageQuote.text}"
+            </blockquote>
+            <p class="text-gray-500 mt-4">— {marriageQuote.author}</p>
+        </div>
+
+        <!-- Story with Photo -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+                <img
+                        src={story.photo.src}
+                        alt={story.photo.alt}
+                        class="w-full h-96 object-cover rounded-lg shadow-md"
+                />
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Story</h2>
+                <p class="text-gray-600 leading-relaxed">{story.text}</p>
+            </div>
+        </div>
+    </section>
+</Layout>

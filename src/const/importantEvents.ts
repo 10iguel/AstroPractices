@@ -48,7 +48,7 @@ export const IMPORTANT_EVENTS: ImportantEvents[] = [
         datetime: "2024-04-29T10:00",
         location: "Layton Utah Temple",
         address: "1400 Oak Hills Dr, Layton, UT 84040",
-        description: "We dated for some time and we visited the temple to talk about marriage. You took 3 hours to answer but at the end, she accepted my proposal to get married. We celebrated with Cafe rio again."
+        description: "After dating for almost a year, we visited the temple to talk about marriage. Celeste took 3 hours to answer but at the end, she accepted my proposal to get married. We celebrated with Cafe rio again."
     },
     {
         date: "THURSDAY, MAY 01, 2024",

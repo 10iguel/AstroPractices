@@ -1,10 +1,77 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {WEDDING_PEOPLE} from "../const/weddingPeople";
 ---
+
 <Layout>
-    <section>
-        <h1>
-            This is the wedding of the Travel
+    <section class="container mx-auto py-12 px-4">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">
+            Our Wedding Party
         </h1>
+        <p class="text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Meet the amazing people who stood by our side on our special day and continue to make our journey unforgettable.
+        </p>
+
+        <!-- Parents Section -->
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Parents</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {WEDDING_PEOPLE
+                .filter(member => member.role.includes("Parents"))
+                .map(member => (
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img
+                                    src={member.image}
+                                    alt={`${member.name} photo`}
+                                    class="w-full h-64 object-cover"
+                            />
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800">{member.name}</h3>
+                                <p class="text-gray-500 text-sm mb-2">{member.role}</p>
+                                <p class="text-gray-600">{member.description}</p>
+                            </div>
+                        </div>
+                ))}
+        </div>
+        <!-- Bridesmaids Section -->
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Bridesmaids</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {WEDDING_PEOPLE
+                .filter(member => member.role.includes("Maid") || member.role.includes("Bridesmaid"))
+                .map(member => (
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img
+                                    src={member.image}
+                                    alt={`${member.name} photo`}
+                                    class="w-full h-64 object-cover"
+                            />
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800">{member.name}</h3>
+                                <p class="text-gray-500 text-sm mb-2">{member.role}</p>
+                                <p class="text-gray-600">{member.description}</p>
+                            </div>
+                        </div>
+                ))}
+        </div>
+
+        <!-- Groomsmen Section -->
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Groomsmen</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {WEDDING_PEOPLE
+                .filter(member => member.role.includes("Best Man") || member.role.includes("Groomsman"))
+                .map(member => (
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <img
+                                    src={member.image}
+                                    alt={`${member.name} photo`}
+                                    class="w-full h-64 object-cover"
+                            />
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800">{member.name}</h3>
+                                <p class="text-gray-500 text-sm mb-2">{member.role}</p>
+                                <p class="text-gray-600">{member.description}</p>
+                            </div>
+                        </div>
+                ))}
+        </div>
     </section>
 </Layout>

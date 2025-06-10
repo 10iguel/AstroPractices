@@ -6,6 +6,6 @@ export const ROUTES: Routes[] = [
     { path: '/wedding-party', label: 'Wedding Party' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/faqs', label: 'FAQs' },
-    { path: '/travel', label: 'Travel' },
+    { path: '/story', label: 'Story' },
     { path: '/things-to-do', label: 'Things To Do' },
 ];
