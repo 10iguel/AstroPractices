@@ -1,18 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import {IMPORTANT_EVENTS} from "../const/importantEvents";
+import {FAQS} from "../const/faqs";
 ---
 <Layout>
     <section class="p-4 bg-beige-100">
-        {IMPORTANT_EVENTS.map(({date, image,address,description,time,title,location,datetime}) => (
+        {FAQS.map(({question, answer}) => (
                 <article class="flex flex-col md:flex-row justify-center items-center mb-4 last:mb-0">
                     <header class="w-full md:w-1/2 p-4 text-center">
                         <h2 class="text-xl font-serif text-gray-800 mb-2 font-bold">Question</h2>
-                        <h2 class="text-4xl font-serif text-gray-600 uppercase mb-2">{date}</h2>
+                        <h2 class="text-4xl font-serif text-gray-600 uppercase mb-2">{question}</h2>
                     </header>
                     <div class="w-full md:w-1/2 p-4 text-center border-l border-gray-300">
                         <h2 class="text-xl font-serif text-gray-800 mb-2 font-bold">Answer</h2>
-                        <p class="text-gray-600 mt-2 text-2xl">{description}</p>
+                        <p class="text-gray-600 mt-2 text-2xl">{answer}</p>
                     </div>
                 </article>
         ))}
