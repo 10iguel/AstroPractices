@@ -5,27 +5,25 @@ const MarryGame = () => {
     const [showModal, setShowModal] = useState(false);
     const yesButtonRef = useRef(null);
 
-    // Set initial position of "No" button next to "Yes" button after mount
+    const setInitialPosition = () => {
+        if (yesButtonRef.current) {
+            // @ts-ignore
+            const yesButtonRect = yesButtonRef.current.getBoundingClientRect();
+            const initialLeft = yesButtonRect.left + yesButtonRect.width + 16;
+            const initialTop = yesButtonRect.top + window.scrollY;
+            setNoButtonPosition({ top: initialTop, left: initialLeft });
+        }
+    };
+
     useEffect(() => {
-        const setInitialPosition = () => {
-            if (yesButtonRef.current) {
-                // @ts-ignore
-                const yesButtonRect = yesButtonRef.current.getBoundingClientRect();
-                const initialLeft = yesButtonRect.left + yesButtonRect.width + 16; // 16px gap (matches gap-4 in Tailwind)
-                const initialTop = yesButtonRect.top + window.scrollY; // Adjust for scrolling
-                setNoButtonPosition({ top: initialTop, left: initialLeft });
-            }
-        };
 
-        // Delay execution to ensure DOM is fully rendered
-        const timer = setTimeout(setInitialPosition, 0);
 
-        // Recalculate on window resize to adjust for layout changes
+        const ref = requestAnimationFrame(setInitialPosition)
+
         window.addEventListener("resize", setInitialPosition);
 
-        // Cleanup
         return () => {
-            clearTimeout(timer);
+            cancelAnimationFrame(ref);
             window.removeEventListener("resize", setInitialPosition);
         };
     }, []);
@@ -44,6 +42,7 @@ const MarryGame = () => {
 
     const closeModal = () => {
         setShowModal(false);
+        requestAnimationFrame(setInitialPosition);
     };
 
     return (

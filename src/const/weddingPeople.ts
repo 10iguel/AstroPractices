@@ -28,7 +28,7 @@ export const WEDDING_PEOPLE: WeddingPeople[] = [
     {
         name: "Lincoln, Joshua, Ruben, Dallin, Taylor",
         role: "Best Man",
-        description: "Picture like if we were peruvian soccer team",
+        description: "Picture as if We were the peruvian national team",
         image: "/images/groomsmen.webp",
     },
 ]

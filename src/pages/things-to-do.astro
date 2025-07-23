@@ -1,12 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import MarryGame from "../components/MarryGame";
+import ThingsToDoGames from "../components/ThingsToDoGames.tsx";
 ---
 <Layout>
     <section>
-        <h1>
-            You can marry me again
-        </h1>
-        <MarryGame client:load/>
+        <ThingsToDoGames client:load/>
     </section>
 </Layout>
