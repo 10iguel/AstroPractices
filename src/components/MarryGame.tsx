@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 
-const MarryGame = () => {
+interface LoveTriviaGame {
+    closeIcon?: () => void;
+}
+
+const MarryGame = ({closeIcon}:LoveTriviaGame) => {
     const [noButtonPosition, setNoButtonPosition] = useState({ top: 0, left: 0 });
     const [showModal, setShowModal] = useState(false);
     const yesButtonRef = useRef(null);
@@ -16,8 +20,6 @@ const MarryGame = () => {
     };
 
     useEffect(() => {
-
-
         const ref = requestAnimationFrame(setInitialPosition)
 
         window.addEventListener("resize", setInitialPosition);
@@ -29,10 +31,12 @@ const MarryGame = () => {
     }, []);
 
     const handleNoHover = () => {
-        const maxX = window.innerWidth - 100; // Adjust for button width
-        const maxY = window.innerHeight - 40; // Adjust for button height
-        const newTop = Math.random() * maxY;
-        const newLeft = Math.random() * maxX;
+        const buttonWidth = 477;
+        const buttonHeight = 270;
+        const maxX = Math.min(window.innerWidth - buttonWidth, 1000);
+        const maxY = Math.min(window.innerHeight - buttonHeight, 580);
+        const newLeft = Math.max(0, Math.random() * maxX);
+        const newTop = Math.max(0, Math.random() * maxY);
         setNoButtonPosition({ top: newTop, left: newLeft });
     };
 
@@ -46,8 +50,18 @@ const MarryGame = () => {
     };
 
     return (
-        <div className="text-center">
-            <h1 className="text-4xl font-bold text-green-600 mb-8">Would you marry me? 💍</h1>
+        <div className=" flex text-center justify-center items-center flex-col">
+            <div className="flex relative mb-8">
+                <button
+                    onClick={closeIcon}
+                    className="absolute top-[-40px] right-[-30px] text-gray-500 hover:text-blue-400 text-4xl z-10"
+                    aria-label="Close"
+                >
+                    &times;
+                </button>
+                <h1 className="text-4xl font-bold text-green-600 mb-8">Would you marry me? 💍</h1>
+            </div>
+
             <div className="flex justify-center gap-4">
                 <button
                     ref={yesButtonRef}

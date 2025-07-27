@@ -1,8 +1,8 @@
-import { useState } from "react";
+import {useState} from "react";
 import MarryGame from "../components/MarryGame";
 import LoveTriviaGame from "../components/LoveTriviaGame";
 
-const CloseIcon = ({ onClick }: { onClick: () => void }) => (
+const CloseIcon = ({onClick}: { onClick: () => void }) => (
     <button
         onClick={onClick}
         className="absolute top-[178px] right-4 text-gray-500 hover:text-blue-400 text-2xl z-10"
@@ -36,13 +36,12 @@ const ThingsToDoGames = () => {
             )}
             {selectedGame === "marry" && (
                 <div className="relative w-full flex justify-center">
-                    <MarryGame />
-                    <CloseIcon onClick={() => setSelectedGame(null)} />
+                    <MarryGame closeIcon={() => setSelectedGame(null)}/>
                 </div>
             )}
             {selectedGame === "trivia" && (
                 <div className="relative w-full flex justify-center">
-                    <LoveTriviaGame closeIcon={() => setSelectedGame(null)} />
+                    <LoveTriviaGame closeIcon={() => setSelectedGame(null)}/>
                 </div>
             )}
         </div>
