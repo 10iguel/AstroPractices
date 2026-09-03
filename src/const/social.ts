@@ -7,7 +7,7 @@ export const SOCIAL: Social[] = [
     {
         name: "Github",
         id: "github",
-        url: "http://localhost:8080",
+        url: "https://github.com/10iguel",
         label:"Visite Github",
         image: {
             logo: Github,
@@ -18,7 +18,7 @@ export const SOCIAL: Social[] = [
     {
         name:"Instagram",
         id:"instagram",
-        url:"https://localhost:8080",
+        url:"https://www.instagram.com/10iguel/",
         label:"Visite instagram",
         image: {
             logo: Instagram,
